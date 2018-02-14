@@ -16,7 +16,7 @@ btnFetch.addEventListener('click', function () {
   event.preventDefault();
   responseContainer.innerHTML = '';
   searchedForText = searchField.value;
-  let uri = `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=e53e1cff6e5f4b5897ecec6f9972ba1a`;
+  let uri = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=e53e1cff6e5f4b5897ecec6f9972ba1a`;
   fetch(uri)
     .then(function (response) {
       return response.json();
@@ -40,7 +40,7 @@ function getNews() {
       // console.log(data.message);
     }
   };
-  articleRequest.open('GET', `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=e53e1cff6e5f4b5897ecec6f9972ba1a`);
+  articleRequest.open('GET', `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=e53e1cff6e5f4b5897ecec6f9972ba1a`);
   articleRequest.onload = addNews;
   articleRequest.onerror = handleError;
   articleRequest.send();
